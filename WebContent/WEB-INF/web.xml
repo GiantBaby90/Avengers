@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+<!-- <servlet>
+     <servlet-name>DBCPInit</servlet-name>
+     <servlet-class>jdbc.DBCPInit</servlet-class>
+     <init-param>
+        <param-name>jdbcdriver</param-name>
+        <param-value>oracle.jdbc.driver.OracleDriver</param-value>
+     </init-param>
+     <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet>
+	<servlet-name>MessageDaoProviderInit</servlet-name>
+	<servlet-class>dbms.MessageDaoProviderInit</servlet-class>
+	<init-param>
+		<param-name>dbms</param-name>
+
+	</init-param>
+	<load-on-startup>1</load-on-startup>
+</servlet> -->
+<welcome-file-list>
+    <welcome-file>/View/offcanvas/index.html</welcome-file>
+</welcome-file-list>
+
+<servlet>
+	<servlet-name>ControllerAction</servlet-name>
+	<servlet-class>mybatis.ControllerAction</servlet-class>
+	<init-param>
+		<param-name>propertyConfig</param-name>
+		<param-value>C:\Users\sist\workspace\Aven\src\property\CommandPro.properties</param-value>
+	</init-param>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ControllerAction</servlet-name>
+	<url-pattern>*.do</url-pattern>
+</servlet-mapping>
+<jsp-config>
+      <jsp-property-group>
+         <url-pattern>/View/offcanvas/*</url-pattern>
+         <include-prelude>/View/header/header.jsp</include-prelude>
+      </jsp-property-group>
+</jsp-config>
+
+
+</web-app>
